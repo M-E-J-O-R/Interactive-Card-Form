@@ -1,239 +1,232 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.card-display {
+  background: url("../images/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1.5rem;
+}
+
+.card {
+  width: 22rem;
+  height: 12rem;
+  padding: 1rem;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.2s linear;
+  border-radius: 0.5rem;
+}
+.card:hover {
+  transform: scale(0.95);
+}
+.card p {
+  color: white;
+  padding: 0.5rem;
+  font-size: 14px;
+}
+
+.front-card {
+  display: flex;
+  left: 40%;
+  flex-direction: column;
+  background-image: url("../images/bg-card-front.png");
+}
+.front-card .card-logo {
+  display: block;
+  width: 4rem;
+  margin-bottom: 2rem;
+}
+.front-card #card-number-display {
+  font-size: 22px;
+  font-size: bold;
+  letter-spacing: 0.15rem;
+  word-spacing: 0.15rem;
+  justify-self: flex-end;
+}
+.front-card #card-name-display {
+  text-transform: uppercase;
+}
+.front-card .details {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  justify-self: flex-start;
+}
+
+.back-card {
+  display: flex;
+  left: 60%;
+  align-items: center;
+  background-image: url("../images/bg-card-back.png");
+}
+.back-card p {
+  width: 100%;
+  text-align: right;
+  padding-right: 1.5rem;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 21rem;
+}
+.result h2,
+.result p {
+  margin-top: 1rem;
+}
+.result p {
+  color: gray;
+}
+
+#complete {
+  display: block;
+  width: 4rem;
+}
+form {
+  padding: 1rem;
+  width: 21rem;
+  display: none;
+}
+form p {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input {
+  padding: 0.35rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  outline: none;
+  border: 1px solid #cfcece;
+  text-transform: uppercase;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.expiry-date {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+
+.expiry #mm {
+  width: 35%;
+  margin-right: 0.5rem;
+}
+.expiry #yy {
+  width: 35%;
+}
+
+button {
+  color: white;
+  border-radius: 0.35rem;
+  border: none;
+  background-color: hsl(278deg, 68%, 11%);
+  width: 100%;
+  margin: 2rem 0 0 0;
+  padding: 0.75rem 3rem;
+}
+
+@media screen and (max-width: 1000px) {
   .container {
-    width: 100vw;
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 30% 70%;
-    
+    grid-template-columns: 100%;
   }
-  
-  .card-display {
-    background: url("../images/bg-main-desktop.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-      padding: 1rem;
-    gap: 1.5rem;
-  }
-  
-  .card {
-    width: 22rem;
-    height: 12rem;
-    padding: 1rem;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: all 0.2s linear;
-    border-radius: 0.5rem;
-  }
-  .card:hover{
-    transform: scale(0.95);
-  }
-  .card p {
-    color: white;
-    padding: 0.5rem;
-    font-size: 14px;
-  }
-  
+
+  .back-card,
   .front-card {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
     display: flex;
-    left: 40%;
     flex-direction: column;
-    background-image: url("../images/bg-card-front.png");
-  }
-  .front-card .card-logo {
-    display: block;
-    width: 4rem;
-    margin-bottom: 2rem;
-  }
-  .front-card #card-number-display {
-    font-size: 22px;
-    font-size:bold;
-    letter-spacing: 0.15rem;
-    word-spacing: 0.15rem;
-    justify-self: flex-end;
-  }
-  .front-card #card-name-display {
-    text-transform: uppercase;
-  }
-  .front-card .details {
-    margin-top: 0.5rem;
-    display: flex;
+    gap: 2rem;
+
     justify-content: space-between;
-    justify-self: flex-start;
   }
-  
+  .card {
+    width: 90vw;
+  }
+  .card-display {
+    position: relative;
+    min-height: 10rem;
+  }
+  .back-card,
+  .front-card {
+    position: absolute;
+  }
   .back-card {
-    display: flex;
-    left: 60%;
-    align-items: center;
-    background-image: url("../images/bg-card-back.png");
+    left: 8vw;
+    top: 0.5px;
   }
-  .back-card p {
-    width: 100%;
-    text-align: right;
-    padding-right: 1.5rem;
+  .front-card {
+    z-index: 2;
+    left: 2vw;
+
+    top: 65%;
   }
-  
-  .form-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .result {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    width: 21rem;
+  .result #complete {
+    transform: scale(1.15);
   }
   .result h2,
   .result p {
-    margin-top: 1rem;
+    transform: scale(1.15);
+    margin-top: 2rem;
   }
-  .result p {
-    color: gray;
+  .result button {
+    margin-top: 3rem;
   }
-  
-  #complete {
-    display: block;
-    width: 4rem;
+  .form-container {
+    padding-top: 3rem;
   }
+
   form {
+    width: 100vw;
+  }
+  form input {
     padding: 1rem;
-    width: 21rem;
-    display:none;
-    
+    border-radius: 0.5rem;
   }
-  form p {
-    margin-bottom: 0.5rem;
-    font-weight:bold;
-    font-size:14px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 1rem;
-  }
-  
-  input {
-    padding: 0.35rem;
-    width: 100%;
-    border-radius: 0.25rem;
-    outline: none;
-    border: 1px solid #cfcece;
-    text-transform:uppercase;
-    
-    
-  }
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  input[type=number] {
-    -moz-appearance: textfield;
-  }
-  
-  .expiry-date {
-    display: grid;
-    grid-template-columns: 65% 35%;
-  }
-  
-  .expiry #mm {
-    width: 35%;
-    margin-right:0.5rem;
-  }
-  .expiry #yy {
-    width: 35%;
-  }
-  
   button {
-    color: white;
-    border-radius: 0.35rem;
-    border: none;
-    background-color: hsl(278deg, 68%, 11%);
-    width: 100%;
-    margin: 2rem 0 0 0;
-    padding: 0.75rem 3rem;
+    padding: 1rem;
   }
-  
-  @media screen  and (max-width: 1000px) {
-    .container {
-      grid-template-columns: 100%;
-      
-    }
-    
-    .back-card,
-  .front-card {
-      left: 0;
-    }
-  }
-  
-  @media screen and (max-width: 500px) {
-    .container {
-      grid-template-columns: 100%;
-      
-      justify-content: center;
-    }
-    .card{
-  
-      width:90vw;
-    }
-    .card-display {
-      position: relative;
-    }
-    .back-card,
-  .front-card {
-      position: absolute;
-    
-    }
-    .back-card {
-      left:8vw;
-      /*     transform: translate(10%, 0); */
-    }
-    .front-card {
-  /*     transform: translate(5%, 60%); */
-      z-index: 2;
-      left:2vw;
-      
-      top:60%;
-    }
-     .result #complete {
-      transform: scale(1.15);
-    }
-    .result h2,
-  .result p {
-      transform: scale(1.15);
-      margin-top: 2rem;
-    }
-    .result button {
-      margin-top: 3rem;
-    }
-   .form-container{
-     padding-top:3rem;
-   }
-    
-    form {
-      width: 100vw;
-      
-    }
-    form input {
-      padding: 1rem;
-      border-radius: 0.5rem;
-    }
-    button {
-      padding: 1rem;
-    }
-   
-  }
+}
