@@ -7,7 +7,6 @@ function Form({ cardName, cardNumber, cardMM, cardYY, cardCVC, setCardName, setC
 
   function lengthChecker(e) {
     if (e.target.value.length > e.target.maxLength) {
-
       e.target.value = e.target.value.slice(0, e.target.maxLength)
     }
     return e.target.value
@@ -45,7 +44,8 @@ function Form({ cardName, cardNumber, cardMM, cardYY, cardCVC, setCardName, setC
           <p>CARD NUMBER</p>
           <input required minLength={16} maxLength={16} id="card-number" type="number" placeholder="1234 5678 9123 0000"
             value={cardNumber}
-            onChange={e => {setCardNumber(lengthChecker(e))
+            onChange={e => {
+              setCardNumber(lengthChecker(e))
             }}
 
           />
